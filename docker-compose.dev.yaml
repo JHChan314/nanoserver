@@ -1,0 +1,39 @@
+version: "3.4"
+services:
+
+  scmj:
+    image: scmj-server:dev
+    command: >
+      bash -c "cp ./go.mod ./go.sum app/
+      && cd app/
+      && ls -la
+      && air -c .air.toml -d"
+    volumes:
+    - ./:/workspace/app
+    networks:
+      - db_network
+    ports:
+      - 12307:12307
+      - 33251:33251
+  
+  scmj-debug:
+    image: scmj-server:dev
+    command: >
+      bash -c "cp ./go.mod ./go.sum app/
+      && cd app/
+      && ls -la
+      && dlv debug main.go --headless --log -l 0.0.0.0:2345 --api-version=2"
+    volumes:
+    - ./:/workspace/app
+    networks:
+      - db_network
+    ports:
+      - 12307:12307
+      - 33251:33251
+      - 2345:2345
+    security_opt:
+      - "seccomp:unconfined"
+
+networks:
+  db_network:
+    driver: "bridge"

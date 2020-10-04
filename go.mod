@@ -1,5 +1,7 @@
 module github.com/lonng/nanoserver
 
+go 1.14
+
 replace (
 	golang.org/x/crypto => github.com/golang/crypto v0.0.0-20181001203147-e3636079e1a4
 	golang.org/x/net => github.com/golang/net v0.0.0-20180926154720-4dfa2610cdf3

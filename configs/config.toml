@@ -16,7 +16,7 @@ cert = "configs/****.crt"       #证书路径
 key = "configs/****.key"        #Key路径
 
 [game-server]
-host = "127.0.0.1"
+host = "192.168.31.125"
 port = 33251
 
 # Redis server config
@@ -26,10 +26,10 @@ port = 6357
 
 # Mysql server config
 [database]
-host = "127.0.0.1"
+host = "db"
 port = 3306
 dbname = "scmj"
-password = ""
+password = "123456"
 username = "root"
 args = "charset=utf8mb4"
 buf_size = 10
@@ -83,4 +83,4 @@ message = ["系统消息：健康游戏，禁止赌博", "欢迎进入游戏"]
 #登陆相关
 [login]
 guest = true
-lists = ["test"]
+lists = ["test", "konglai"]

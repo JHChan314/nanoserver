@@ -1,0 +1,36 @@
+version: "3.7"
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./mysql.cnf:/etc/mysql/my.cnf
+    networks:
+      - db_network
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: scmj
+      MYSQL_USER: scmj
+      MYSQL_PASSWORD: scmj
+      TZ: Asia/Shanghai
+
+  adminer:
+    depends_on:
+      - db
+    image: adminer
+    restart: always
+    networks:
+      - db_network
+    ports:
+      - 8086:8080
+
+networks:
+  db_network:
+    driver: "bridge"
+
+volumes:
+    db_data: {}
+
