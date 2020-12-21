@@ -4,7 +4,6 @@ services:
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
-      - ./mysql.cnf:/etc/mysql/my.cnf
     networks:
       - db_network
     ports:
@@ -12,9 +11,6 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_DATABASE: scmj
-      MYSQL_USER: scmj
-      MYSQL_PASSWORD: scmj
       TZ: Asia/Shanghai
 
   adminer:

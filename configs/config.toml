@@ -26,7 +26,7 @@ port = 6357
 
 # Mysql server config
 [database]
-host = "db"
+host = "192.168.31.125"
 port = 3306
 dbname = "scmj"
 password = "123456"

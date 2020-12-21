@@ -11,7 +11,7 @@ services:
     volumes:
     - ./:/workspace/app
     networks:
-      - db_network
+      - app_network
     ports:
       - 12307:12307
       - 33251:33251
@@ -26,7 +26,7 @@ services:
     volumes:
     - ./:/workspace/app
     networks:
-      - db_network
+      - app_network
     ports:
       - 12307:12307
       - 33251:33251
@@ -35,5 +35,5 @@ services:
       - "seccomp:unconfined"
 
 networks:
-  db_network:
+  app_network:
     driver: "bridge"
