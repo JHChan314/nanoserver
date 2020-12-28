@@ -1,0 +1,19 @@
+### nanoserver:base
+FROM hackerlinner/nanoserver:base as builder
+
+WORKDIR /nanoserver
+COPY . .
+RUN CGO_ENABLED=0 go build -a -o bin/nanoserver
+
+### nanoserver-alpine:base
+FROM hackerlinner/nanoserver-alpine:base
+
+LABEL maintainer="为少"
+WORKDIR /home/app
+COPY --from=builder /nanoserver/bin/nanoserver .
+COPY ./configs ./configs
+RUN chown -R app:app ./
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN echo 'Asia/Shanghai' >/etc/timezone
+USER app
+CMD ["./nanoserver"]

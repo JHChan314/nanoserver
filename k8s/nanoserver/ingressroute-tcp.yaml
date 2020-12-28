@@ -1,0 +1,13 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: nanoserver-game-route
+spec:
+  entryPoints:
+    - nanoserver-gm
+  routes:
+    - match: HostSNI(`*`)
+      kind: Rule
+      services:
+        - name: nanoserver
+          port: 30251

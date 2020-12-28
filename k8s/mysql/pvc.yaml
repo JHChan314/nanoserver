@@ -1,0 +1,36 @@
+## PV
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nanoserver-mysql
+  labels:
+    app: nanoserver-mysql
+spec:
+  storageClassName: ""
+  capacity:          
+    storage: 8Gi
+  accessModes:       
+  - ReadWriteOnce
+  mountOptions:
+  - hard
+  - nfsvers=4.1    
+  nfs:
+    server: 172.16.0.4
+    path: /data/nfs/nano/nanoserver-mysql
+  persistentVolumeReclaimPolicy: Retain  
+---
+## PVC
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: nanoserver-mysql
+spec:
+  storageClassName: ""
+  resources:
+    requests:
+      storage: 8Gi
+  accessModes:
+  - ReadWriteOnce
+  selector:
+    matchLabels:
+      app: nanoserver-mysql
