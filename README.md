@@ -8,6 +8,8 @@
 
 我弄的完整调试教程：[探索 Golang 云原生游戏服务器开发，硬核实战之调试 NanoServer 生产级麻将游戏服务器](https://mp.weixin.qq.com/s/jAj0lh57NflZQsi5cw5xMw)
 
+[生产级Golang麻将游戏服务器 NanoServer 二次开发，利用Drone CI/CD打通DevOps上 K8S 迭代流程](https://mp.weixin.qq.com/s?__biz=MzA4Mzc4NTE5MQ==&mid=2692293281&idx=1&sn=251610f58fdde69cb47bbf62bce6403b&chksm=ba7ca6298d0b2f3ff77d5f43151f7e38a0ad4345de43a295d377b28feb9eb76010441c779e76&token=184248889&lang=zh_CN#rd)
+
 # docker compose 本地调试或二次开发
 
 **清理数据**
