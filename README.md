@@ -44,3 +44,7 @@ docker-compose -f docker-compose.dev.yaml up scmj
 docker-compose -f docker-compose.dev.yaml up scmj-debug
 # docker-compose -f docker-compose.dev.yaml down
 ```
+
+## Drone CI/CD + K8S =>> DevOps
+
+[生产级Golang麻将游戏服务器 NanoServer 二次开发，利用Drone CI/CD打通DevOps上 K8S 迭代流程](https://mp.weixin.qq.com/s?__biz=MzA4Mzc4NTE5MQ==&mid=2692293281&idx=1&sn=251610f58fdde69cb47bbf62bce6403b&chksm=ba7ca6298d0b2f3ff77d5f43151f7e38a0ad4345de43a295d377b28feb9eb76010441c779e76&token=184248889&lang=zh_CN#rd)
