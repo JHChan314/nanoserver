@@ -16,17 +16,17 @@ cert = "configs/****.crt"       #证书路径
 key = "configs/****.key"        #Key路径
 
 [game-server]
-host = "192.168.31.125"
+host = "192.168.43.187"
 port = 33251
 
 # Redis server config
 [redis]
-host = "127.0.0.1"
+host = "192.168.43.187"
 port = 6357
 
 # Mysql server config
 [database]
-host = "192.168.31.125"
+host = "127.0.0.1"
 port = 3306
 dbname = "scmj"
 password = "123456"
