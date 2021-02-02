@@ -71,9 +71,13 @@ docker-compose -f docker-compose.mysql.yaml up
 # docker-compose -f docker-compose.mysql.yaml down 卸载
 # docker-compose -f docker-compose.mysql.yaml ps
 
+docker-compose -f docker-compose.mysql.5.7.yaml up
+docker-compose -f docker-compose.mysql.5.7.yaml down
+
 # 清理数据文件
 # docker volume ls
-# docker volume rm nanoserver_db_data
+# docker volume rm nanoserver_db_data 
+# docker volume rm github-nanoserver_db_data
 ```
 
 容器启动后，会自动帮我们创建数据库 - `scmj`。
