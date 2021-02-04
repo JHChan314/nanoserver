@@ -3,3 +3,4 @@
 dist/
 cmd/kwxd/configs/config.local.toml
 tmp/**
+.DS_Store
